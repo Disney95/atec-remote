@@ -25,8 +25,14 @@ jobs:
 
       - name: Bump Kotlin plugin version
         run: |
-          sed -i 's/id "org.jetbrains.kotlin.android" version "[^"]*"/id "org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
-          grep -n "org.jetbrains.kotlin.android" android/settings.gradle
+          echo "--- settings.gradle ANTES ---"
+          cat android/settings.gradle
+          sed -i -E "s/(id [\"']org\.jetbrains\.kotlin\.android[\"'] version )[\"'][^\"']*[\"']/\1\"1.9.24\"/" android/settings.gradle
+          if [ -f android/build.gradle ]; then
+            sed -i -E "s/(ext\.kotlin_version[[:space:]]*=[[:space:]]*)[\"'][^\"']*[\"']/\1'1.9.24'/" android/build.gradle
+          fi
+          echo "--- settings.gradle DESPUES ---"
+          cat android/settings.gradle
 
       - name: Install dependencies
         run: flutter pub get
