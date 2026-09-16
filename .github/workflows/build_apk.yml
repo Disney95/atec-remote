@@ -21,7 +21,7 @@ jobs:
           channel: 'stable'
 
       - name: Generate missing Android scaffolding
-        run: flutter create --platforms=android .
+        run: flutter create --platforms=android --project-name=atec_remote .
 
       - name: Install dependencies
         run: flutter pub get
