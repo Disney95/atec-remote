@@ -1,0 +1,4 @@
+storePassword=REEMPLAZA_CON_TU_PASSWORD
+keyPassword=REEMPLAZA_CON_TU_PASSWORD
+keyAlias=pospro
+storeFile=../pospro.jks

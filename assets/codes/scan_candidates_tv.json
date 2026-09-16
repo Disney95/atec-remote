@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Vizio TV genérico (chasis NEC addr 0x04FB)",
+    "code": "0x04FB08F7",
+    "source": "Soporte técnico de Vizio, vía foro proforums.harman.com — protocolo NEC, dirección 04FB para varios modelos de TV Vizio"
+  },
+  {
+    "label": "Blaupunkt IVDP-01 (chasis NEC addr 0x10EF)",
+    "code": "0x10EFD02F",
+    "source": "Foro RemoteMaster/hifi-remote — dispositivo NEC1 0x10ef, código de POWER"
+  }
+]

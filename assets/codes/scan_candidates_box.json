@@ -1,0 +1,7 @@
+[
+  {
+    "label": "LG STB genérico (chasis NEC addr 0x20DF, remoto AKB73275673)",
+    "code": "0x20DF10EF",
+    "source": "Foro hifi-remote (LIRC/RemoteMaster) — config para LG STB-3000, muchas cajitas DTMB chinas clonan este layout de remoto"
+  }
+]

@@ -1,0 +1,27 @@
+name: atec_remote
+description: Control remoto IR que replica el TV ATEC-Haier, la cajita ATEC y el split Mystic MY-ASR1284.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/codes/atec_tv.json
+    - assets/codes/atec_box.json
+    - assets/codes/mystic_split.json
+    - assets/codes/scan_candidates_tv.json
+    - assets/codes/scan_candidates_box.json

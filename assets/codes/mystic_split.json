@@ -1,0 +1,18 @@
+{
+  "device_name": "Mystic Split MY-ASR1284",
+  "model": "MY-ASR1284",
+  "protocol": "UNKNOWN_STATE_BASED",
+  "frequency_hz": 38000,
+  "_nota": "A diferencia del TV y la cajita, los splits NO envían un código corto por botón: cada cambio reenvía un PAQUETE COMPLETO con todo el estado (temperatura, modo, velocidad, swing, etc.), normalmente de 30 a 120+ bits, con un protocolo propietario del fabricante. No existe una base de datos pública para esta marca/modelo. Este archivo es un ESQUELETO de los campos de estado esperados; el 'raw_frame_template' es un PLACEHOLDER y NO debe usarse contra el equipo real hasta capturar el paquete verdadero (por ejemplo con un receptor IR + IRremoteESP8266 en modo RAW, botón por botón, variando un solo campo a la vez para aislar qué bits controlan qué).",
+  "state_fields": {
+    "power": { "type": "bool", "default": false },
+    "mode": { "type": "enum", "values": ["COOL", "HEAT", "FAN", "DRY", "AUTO"], "default": "COOL" },
+    "temp_celsius": { "type": "int", "min": 16, "max": 30, "default": 24 },
+    "fan_speed": { "type": "enum", "values": ["AUTO", "LOW", "MED", "HIGH"], "default": "AUTO" },
+    "swing": { "type": "bool", "default": false },
+    "turbo": { "type": "bool", "default": false },
+    "sleep": { "type": "bool", "default": false }
+  },
+  "raw_frame_template": "PLACEHOLDER_NO_VALIDO",
+  "capture_pendiente": true
+}
