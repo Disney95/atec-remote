@@ -23,6 +23,11 @@ jobs:
       - name: Generate missing Android scaffolding
         run: flutter create --platforms=android --project-name=atec_remote .
 
+      - name: Bump Kotlin plugin version
+        run: |
+          sed -i 's/id "org.jetbrains.kotlin.android" version "[^"]*"/id "org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
+          grep -n "org.jetbrains.kotlin.android" android/settings.gradle
+
       - name: Install dependencies
         run: flutter pub get
 
