@@ -25,22 +25,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Decode keystore
-        run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/pospro.jks
-          ls -la android/pospro.jks
-          echo "--- Verificando el keystore ---"
-          keytool -list -v -keystore android/pospro.jks -storepass "${{ secrets.ANDROID_STORE_PASSWORD }}" || echo "!!! EL KEYSTORE NO SE PUDO LEER !!!"
-
-      - name: Create key.properties
-        run: |
-          cat > android/key.properties << EOP
-          storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}
-          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
-          keyAlias=pospro
-          storeFile=../pospro.jks
-          EOP
-
       - name: Build release APK
         run: flutter build apk --release
 
