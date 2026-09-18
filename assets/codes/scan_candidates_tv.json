@@ -1,8 +1,18 @@
 [
   {
-    "label": "Vizio TV genérico (chasis NEC addr 0x04FB)",
+    "label": "Vizio TV genérico (chasis NEC addr 0x04FB, toggle)",
     "code": "0x04FB08F7",
     "source": "Soporte técnico de Vizio, vía foro proforums.harman.com — protocolo NEC, dirección 04FB para varios modelos de TV Vizio"
+  },
+  {
+    "label": "Vizio TV genérico (chasis NEC addr 0x04FB, Power ON discreto)",
+    "code": "0x04FB2AD5",
+    "source": "Soporte técnico de Vizio — código discreto de encendido (Power ON = 0x2A)"
+  },
+  {
+    "label": "Vizio TV genérico (chasis NEC addr 0x04FB, Power OFF discreto)",
+    "code": "0x04FB25DA",
+    "source": "Soporte técnico de Vizio — código discreto de apagado (Power OFF = 0x25)"
   },
   {
     "label": "Blaupunkt IVDP-01 (chasis NEC addr 0x10EF)",
