@@ -1,17 +1,7 @@
-import java.util.Properties
-import java.io.FileInputStream
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("dev.flutter.flutter-gradle-plugin")
-}
-
-val keystoreProperties = Properties()
-val keystorePropertiesFile = rootProject.file("key.properties")
-val hasKeystore = keystorePropertiesFile.exists()
-if (hasKeystore) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
 android {
@@ -31,23 +21,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    if (hasKeystore) {
-        signingConfigs {
-            create("release") {
-                keyAlias = keystoreProperties["keyAlias"] as String?
-                keyPassword = keystoreProperties["keyPassword"] as String?
-                val storeFilePath = keystoreProperties["storeFile"] as String?
-                storeFile = storeFilePath?.let { file(it) }
-                storePassword = keystoreProperties["storePassword"] as String?
-            }
-        }
-    }
-
     buildTypes {
         release {
-            if (hasKeystore) {
-                signingConfig = signingConfigs.getByName("release")
-            }
+            // Firma temporal con la clave de debug de Flutter, solo para poder instalar mientras se configura la firma real
+            signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = false
             isShrinkResources = false
         }
